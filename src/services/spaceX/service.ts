@@ -1,11 +1,10 @@
 export const getDragonInfo = async () => {
     try {
-        const response = await fetch(`https://api.spacex.land/rest/dragons?limit=1
-        `);
+        const response = await fetch(`https://api.spacex.land/rest/dragons`);
         if (response.status !== 200) return;
-        
+
         const dragon = await response.json();
-        
+
         return dragon;
 
     } catch (error) {

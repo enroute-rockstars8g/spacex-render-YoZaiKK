@@ -3,27 +3,64 @@ import React, { ChangeEvent, FC, useEffect, useState } from "react";
 // import { DragonDisplayProps } from "./types";
 import { getDragonInfo } from "../../services/spaceX/service";
 
-
 export const DragonDisplay: FC = () => {
-  const [dragon, setDragon] = useState<any>(undefined);
-  // const [dragon, setDragon] = useState<any>(undefined);
-  useEffect(() => { 
-    const firstDragon =  async () => {
-      const newDragon = await getDragonInfo(); 
-      setDragon(newDragon);
+  const [dragons, setDragons] = useState<any>(undefined);
+  const [valor, setValor] = useState<number>(0);
+  // useEffect(() => {
+  //   const firstDragon =   () => {
+  //     const newDragons =  getDragonInfo();
+  //     setDragons(newDragons);
+  //   };
+  //   firstDragon();
+  //   console.log("DragonDisplay mount: ", typeof(dragons));
+  // },[valor]);
+  // useEffect(() => {
+  //   if (valor === 0) return;
+  //   console.log("Actualizando valor");
+  //   return () => {
+  //     console.log("otra funcion para desmontar componente");
+  //     console.log(dragons.resolve());
+  //   };
+  // }, [valor]);
+  const funcion = () => {
+    setValor(valor + 1);
+    console.log("hola: ", dragons[0].name);
+  };
+  // useEffect(() => {
+  //   const auxDragons = getDragonInfo();
+  //   setDragons(auxDragons);
+  // } , []);
+
+  useEffect(() => {
+    const firstDragon = async () => {
+      const auxDragons = await getDragonInfo();
+      setDragons(auxDragons);
     };
     firstDragon();
-    console.log("DragonDisplay mount: " , dragon);
-  },[]);
-
-  const funcion = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
+  }, []);
+  const imprimirCosas = (value: any) => {
+    const paragraphs = [];
+    paragraphs.push(
+      <h1>
+        {value.name}
+      </h1>
+    );
+    return paragraphs;
   };
   return (
     <div>
-    <input type="number" onChange = {funcion}/>
-        <h3>Dragon number: </h3> 
-        {/* <p>{Dragon(position)}</p> */}
+      {/* <h3>Dragon name: </h3> */}
+      {/* <p>{Dragon(position)}</p> */}
+      {/* <button onClick={funcion}> Cargar 😈</button> */}
+      {dragons !== undefined ? (
+        <div>
+          {dragons.map((dragon: any) => (
+            <p key={dragon.id}>
+              Nombre: {imprimirCosas(dragon)} {(dragon.description)}
+            </p>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {DragonDisplay} from './components/missions/component';
+import { DragonDisplay } from './components/missions/component';
 
-function App() {
+function App() { 
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -19,9 +19,8 @@ function App() {
         >
           Esta no es una pagina de quimica
         </a>
-      </header>
-      <p>hola</p> */}
-      <DragonDisplay />
+      </header> */}
+        <DragonDisplay/>
     </div>
   );
 }
