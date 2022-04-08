@@ -1,7 +1,8 @@
 import React, { ChangeEvent, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { DragonDisplay } from './components/missions/component';
+import { DragonDisplay } from './components/dragons/component';
+import { RocketDisplay } from './components/rockets/component';
 
 function App() { 
   return (
@@ -21,6 +22,7 @@ function App() {
         </a>
       </header> */}
         <DragonDisplay/>
+        <RocketDisplay/>
     </div>
   );
 }
