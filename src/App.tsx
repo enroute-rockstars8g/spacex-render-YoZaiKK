@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Esta no es una pagina de quimica
         </a>
       </header>
     </div>
