@@ -13,7 +13,16 @@ export const RocketDisplay: FC = () => {
   }, []);
   const imprimirCosas = (value: any) => {
     const paragraphs = [];
-    paragraphs.push(<h1>{value.name}</h1>);
+    paragraphs.push(
+      <div>
+        <div>
+          <h1>{value.name}</h1>
+          <p>{value.description}</p>
+        </div> 
+        <p>More info:</p>
+          <iframe className="frame" src={value.wikipedia} title={value.name}></iframe>  
+      </div>
+    );
     return paragraphs;
   };
   return (
@@ -21,9 +30,7 @@ export const RocketDisplay: FC = () => {
       {rockets !== undefined ? (
         <div>
           {rockets.map((rocket: any) => (
-            <p key={rocket.id}>
-              {imprimirCosas(rocket)} {rocket.description}
-            </p>
+            <p key={rocket.id}>{imprimirCosas(rocket)}</p>
           ))}
         </div>
       ) : null}

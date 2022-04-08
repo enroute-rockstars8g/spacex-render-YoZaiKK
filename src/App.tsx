@@ -1,29 +1,24 @@
-import React, { ChangeEvent, useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { DragonDisplay } from './components/dragons/component';
-import { RocketDisplay } from './components/rockets/component';
+import React, { ChangeEvent, useState } from "react";
+import pic from "./img/SpaceX-Logo.png";
+import "./App.css";
+import { DragonDisplay } from "./components/dragons/component";
+import { RocketDisplay } from "./components/rockets/component";
 
-function App() { 
+function App() {
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Esta no es una pagina de quimica
-        </a>
-      </header> */}
-        <DragonDisplay/>
-        <RocketDisplay/>
-    </div>
+    <>
+      <header>
+        <img className="logoSpaceX" src={pic} />
+      </header>
+      <div className="row">
+        <section className="seccionDragons">
+          <DragonDisplay />  
+        </section>
+        <section className="seccionRockets">
+          <RocketDisplay /> 
+        </section>
+      </div>
+    </>
   );
 }
 
