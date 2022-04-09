@@ -32,6 +32,17 @@ function App() {
             </section>
           </div>
         </main>
+        <footer>
+        <div className="centered">
+            <div className="site-branding">
+              <img
+                className="logoSpaceX"
+                src={pic}
+                alt="logoSpaceX"
+              />
+            </div>
+          </div>
+        </footer>
       </div>
     </>
   );
