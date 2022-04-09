@@ -6,16 +6,32 @@ import { RocketDisplay } from "./components/rockets/component";
 function App() {
   return (
     <>
-      <header>
-        <img className="logoSpaceX" src={pic} alt="logoSpaceX" />
-      </header>
-      <div className="row">
-        <section className="seccionDragons">
-          <DragonDisplay />  
-        </section>
-        <section className="seccionRockets">
-          <RocketDisplay /> 
-        </section>
+      <div className="centered">
+        <header className="masthead clear">
+          <div className="centered">
+            <div className="site-branding">
+              <img
+                className="logoSpaceX site-title"
+                src={pic}
+                alt="logoSpaceX"
+              />
+            </div>
+          </div>
+        </header>
+        <main className="main-area">
+          <div className="centered">
+            <section>
+              <div className="row">
+                <section className="seccionDragons">
+                  <DragonDisplay />
+                </section>
+                <section className="seccionRockets">
+                  <RocketDisplay />
+                </section>
+              </div>
+            </section>
+          </div>
+        </main>
       </div>
     </>
   );

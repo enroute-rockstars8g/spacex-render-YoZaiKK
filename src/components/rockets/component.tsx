@@ -14,13 +14,18 @@ export const RocketDisplay: FC = () => {
   const imprimirCosas = (value: any) => {
     const paragraphs = [];
     paragraphs.push(
-      <div>
-        <div>
-          <h1>{value.name}</h1>
-          <p>{value.description}</p>
+      <div className="divCompleto">
+        <div className="divDesc">
+          <h1>{value.name}</h1> <hr/>
+          <a href={value.wikipedia}>
+            <p><b>Description: </b>{value.description}</p>
+          </a>
         </div> 
-        <p>More info:</p>
-          <iframe className="frame" src={value.wikipedia} title={value.name}></iframe>  
+        <iframe
+          className="frame"
+          src={value.wikipedia}
+          title={value.name}
+        ></iframe>
       </div>
     );
     return paragraphs;
